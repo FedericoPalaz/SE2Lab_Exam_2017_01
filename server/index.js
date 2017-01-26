@@ -305,11 +305,13 @@ app.post('/updatePizzasByPrice', function(request, response)
     if (pizzaPrice!="not defined" && pizzaPrice!="body undefined")
 	{
 		
-		
+		console.log(pizzaPrice);
+        console.log(pizzaIncrement);
+        console.log(lower);
 		pizzaManager.updatePizza(pizzaPrice,pizzaIncrement,lower);
         response.writeHead(200, headers);
 		response.end(JSON.stringify(pizzaManager.getMenu()));    
-
+        console.log(pizzaManager.getMenu());
 	}
     else    
 	{

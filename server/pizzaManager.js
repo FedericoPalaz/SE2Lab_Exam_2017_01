@@ -147,7 +147,7 @@ var updatePizza= function updatePizza(prezzo,incremento,lower)
                 {
                     if (menu[i].price < prezzo)
                     {
-                        menu[i].price=menu[i].price+incremento;
+                        menu[i].price=parseFloat(menu[i].price)+incremento;
                     }
                 }
         }
@@ -157,11 +157,11 @@ var updatePizza= function updatePizza(prezzo,incremento,lower)
                 {
                     if (menu[i].price > prezzo)
                     {
-                        menu[i].price=menu[i].price+incremento;
+                        menu[i].price=parseFloat(menu[i].price)+incremento;
                     }
                 }
         }
-    return getMenu();
+    
 }
 
 //export functions
