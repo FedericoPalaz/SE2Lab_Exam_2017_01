@@ -79,3 +79,52 @@ describe("Test /searchPizza", function() {
 
 });
 
+// Test for /deletePizza
+describe("Test /deletePizza", function() {
+	//Pizza does not exist
+	data1 = {ID: "10" };
+	it("to returns status code 404", function(done) {
+	  client.post(base_url + "deletePizza/", data1, function(err, res, body) {
+		expect(res.statusCode).toBe(404);
+		done();
+	  });
+	});
+    
+    	//Pizza does not exist
+	data5 = {name: "Cavoli" };
+	it("to returns status code 404", function(done) {
+	  client.post(base_url + "deletePizza/", data5, function(err, res, body) {
+		expect(res.statusCode).toBe(404);
+		done();
+	  });
+	});
+    
+    //Pizza does not exist
+	data7 = {};
+	it("to returns status code 406", function(done) {
+	  client.post(base_url + "deletePizza/", data7, function(err, res, body) {
+		expect(res.statusCode).toBe(406);
+		done();
+	  });
+	});
+    
+    //Pizza  exist
+	data2 = {name: "Margherita" };
+	it("to returns status code 200", function(done) {
+	  client.post(base_url + "deletePizza/", data2, function(err, res, body) {
+		expect(res.statusCode).toBe(200);
+		done();
+	  });
+	});
+    
+    
+    //Pizza  exist
+	data3 = {ID: '1' };
+	it("to returns status code 200", function(done) {
+	  client.post(base_url + "deletePizza/", data3, function(err, res, body) {
+		expect(res.statusCode).toBe(200);
+		done();
+	  });
+	});
+});
+
